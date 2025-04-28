@@ -1,0 +1,14 @@
+SELECT 
+
+agendamento.data,
+agendas.horario,
+clientes.nome_usuario AS nome_cliente,
+servicos.nome_servico,
+profissional.nome_usuario AS nome_profissional
+
+FROM agendamento
+
+INNER JOIN usuarios AS clientes ON clientes.id_usuario = agendamento.id_usuario
+INNER JOIN servicos ON servicos.id_servicos = agendamento.id_servico
+INNER JOIN agendas ON agendas.id_agenda = agendamento.id_agenda
+INNER JOIN usuarios AS profissional ON agendas.id_usuario = profissional.id_usuario
