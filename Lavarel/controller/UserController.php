@@ -15,7 +15,8 @@ class UserController extends BaseController
     public function getusuarios(){
 
         $usuarios = User::all();
+        return view('usuarios', ['usuarios' => $usuarios]);
 
-    return response()->json($usuarios);
 }
 }
+
