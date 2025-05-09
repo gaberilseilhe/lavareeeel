@@ -18,9 +18,9 @@ class Agenda extends Model
         'horario',
     ];
 
-    public function usuario()
+    public function agendamento()
     {
-        return $this->hasMany(User::class, 'id_servico', 'id_servicos');
+        return $this->hasMany(Agendamento::class, 'id_agenda', 'id_agendas');
     }
 
 }

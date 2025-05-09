@@ -19,9 +19,9 @@ class Servicos extends Model
         "valor",
     ];
 
-    public function usuario()
+    public function servicos()
     {
-        return $this->hasMany(User::class,'id_servico', 'id_servico');
+        return $this->hasMany(Agendamento::class,'id_servicos', 'id_servicos');
     }
 
 }

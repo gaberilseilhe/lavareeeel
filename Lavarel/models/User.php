@@ -23,9 +23,17 @@ class User extends Authenticatable
         "id_grupo"
     ];
 
-    public function usuario()
+    public function grupos()
     {
         return $this->belongsTo(Grupos::class, 'id_grupo', 'id_grupo');
+    }
+    public function agendamento()
+    {
+        return $this->hasMany(agendamento::class, 'id_usuario', 'id_usuario');
+    }
+    public function agenda()
+    {
+        return $this->hasMany(agenda::class, 'id_agenda', 'id_agenda');
     }
 
 }
