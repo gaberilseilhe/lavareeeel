@@ -10,9 +10,8 @@ class Servicos extends Model
     use HasFactory;
 
     protected $table = 'servicos';
- 
     protected $primaryKey = 'id_servicos';
-
+    public $timestamps = false;
 
     protected $fillable = [
         "nome_servico",
@@ -21,7 +20,7 @@ class Servicos extends Model
 
     public function servicos()
     {
-        return $this->hasMany(Agendamento::class,'id_servicos', 'id_servicos');
+        return $this->hasMany(Agendamento::class, 'id_servicos', 'id_servicos');
     }
 
 }

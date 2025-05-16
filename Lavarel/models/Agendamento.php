@@ -11,6 +11,7 @@ class Agendamento extends Model
 
     protected $table = 'agendamento';
     protected $primaryKey = 'id_agendamento';
+    public $timestamps = false;
 
     protected $fillable = [
         'id_usuario',
@@ -21,14 +22,14 @@ class Agendamento extends Model
 
     public function usuario()
     {
-        return $this->hasMany(User::class,'id_agendamento', 'id_agendamento');
+        return $this->hasMany(User::class, 'id_agendamento', 'id_agendamento');
     }
 
     public function agenda()
     {
         return $this->belongsTo(Agenda::class, 'id_agenda', 'id_agenda');
     }
-    
+
     public function servico()
     {
         return $this->belongsTo(Servicos::class, 'id_servicos', 'id_servicos');
