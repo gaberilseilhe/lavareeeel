@@ -17,3 +17,24 @@ Route::get('agendamento', [AgendamentoController::class, 'getagendamento']);
 Route::get('agenda', [AgendaController::class, 'getagenda']);
 
 Route::get('grupos', [GruposController::class, 'getgrupos']);
+
+Route::get('/create-usuario', [
+    UserController::class,
+    'createUsuario'
+]); 
+Route::get('/create-servico', [
+    ServicosController::class,
+    'createServico'
+]);
+Route::get('/create-grupo', [
+    GruposController::class,
+    'createGrupo'
+]);
+Route::get('/create-agendamento', [
+    AgendamentoController::class,
+    'createAgendamento'
+]);
+Route::get('/create-agenda', [
+    AgendaController::class,
+    'createAgenda'
+]);
