@@ -15,7 +15,22 @@ class ServicosController extends BaseController
         ]);
         return response()->json($servicoCriado);
     }
+    public function deletarServico(Request $request)
+    {
+        $servico = Servicos::find($request->id_servicos)->delete();
+        return response()->json($servico);
+    }
+
+    public function atualizarServico(Request $request)
+    {
+        $servico = Servicos::find($request->id_servicos)
+            ->update([
+                'nome_servico' => $request->nome_servico,
+
+            ]);
+    }
+
 }
 /*
 https://localhost/Agendamento_sistem/create-servico?nome_servico=aaaaa&valor=aa.aa
-  */ 
+  */
